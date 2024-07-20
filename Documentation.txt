@@ -1,0 +1,69 @@
+
+# ABOUT THREADS
+
+What is a thread?
+A thread is a basic unit of CPU utilization. 
+
+Thread:
+	• Thread ID -> • Program Counter -> • A register set -> • A stack
+
+A thread shares with other threads in the same process things like: 
+	• Code section
+	• Data section
+	• Other operating system resources; like open files and sigs
+
+A traditional process or a heavyweight process has a single thread of control,
+meanwhile a multi thread of control can handle multiple tasks at a time. 
+
+A single threaded process will run on only once processor, whilst a multi-threaded process
+can run on multiple processors. 
+
+Multi-threaded processes can have either parallel or concurrent execution.
+
+PARALLEL: 
+
+	|  int i;			|	int x;
+	|  i = 20;			|	x = 5;
+	|  int j;			|	int y;
+	|  j = 30;			|	y = 3;
+	|  int sum;			|	int total;
+	|  sum = i + j;		|	total = x * y;
+
+CONCURRENT:
+
+	|	int i;			|	
+	|	i = 20;			|	
+	|					|	int x;
+	|	int j;			|	
+	|					|	x = 5;
+	|					|	int y;
+	|	j = 30;			|	
+	|					|	y = 3;
+	|	int sum;		|	
+	|					|	int total;
+	|					|	total = x * y;
+	|	sum = i + j;	|	
+
+when calling `#include <pthread.h>`, pthread stands for POSIX Threads. 
+
+------------------------------------------------------------------------------------------------------
+
+pthread_create();
+
+It creates a new thread, by passing arguments: pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg
+
+pthread_join(); 
+
+Pauses the execution until the target thread is complete.
+arguments: pthread_t thread, void **value_ptr
+
+
+
+NESO ACADEMY: 
+https://www.youtube.com/watch?v=LOfGJcVnvAk
+-----------
+https://medium.com/@ruinadd/philosophers-42-guide-the-dining-philosophers-problem-893a24bc0fe2
+-----------
+How to use threads in C (basic intro):
+https://www.youtube.com/watch?v=ldJ8WGZVXZk
+ 
