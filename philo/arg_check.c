@@ -12,15 +12,15 @@
 
 #include "philosophers.h"
 
-void error_exit(char *str)
+void	error_exit(char *str)
 {
 	printf("%s\n", str);
 	exit(0);
 }
 
-int arg_check(int argc, char **argv)
+int	arg_check(int argc, char **argv)
 {
-	int index; 
+	int	index;
 
 	index = 2;
 	argc--;

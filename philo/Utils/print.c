@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 12:16:55 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:09:04 by mbabayan         ###   ########.fr       */
+/*   Created: 2024/07/23 14:30:48 by mbabayan          #+#    #+#             */
+/*   Updated: 2024/07/23 16:52:16 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-int	ft_atoi(char *string)
+void	print(t_philo *philo, pthread_mutex_t *lock, char *str)
 {
-	unsigned long long	total;
-
-	total = 0;
-	if (*string == '-' || *string == '+')
-	{
-		if (*string == '-')
-			return (-1);
-		string++;
-	}
-	while (*string && (*string) >= '0' && (*string) <= '9')
-	{
-		total = (total * 10) + (*string - '0');
-		if (total > INT_MAX)
-			return (-1);
-		string++;
-	}
-	if (*string)
-		return (-1);
-	return (total);
+	pthread_mutex_lock(lock);
+	printf("%lu %d %s\n", (get_time() - philo->env->start), philo->index, str);
+	pthread_mutex_unlock(lock);
 }

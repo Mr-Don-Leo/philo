@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   value_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 12:16:55 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:09:04 by mbabayan         ###   ########.fr       */
+/*   Created: 2024/07/23 15:22:51 by mbabayan          #+#    #+#             */
+/*   Updated: 2024/07/23 16:52:24 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-int	ft_atoi(char *string)
+int	value_check(int value, pthread_mutex_t lock)
 {
-	unsigned long long	total;
+	int	status;
 
-	total = 0;
-	if (*string == '-' || *string == '+')
-	{
-		if (*string == '-')
-			return (-1);
-		string++;
-	}
-	while (*string && (*string) >= '0' && (*string) <= '9')
-	{
-		total = (total * 10) + (*string - '0');
-		if (total > INT_MAX)
-			return (-1);
-		string++;
-	}
-	if (*string)
-		return (-1);
-	return (total);
+	status = 0;
+	pthread_mutex_lock(&lock);
+	if (value == 1)
+		status = 1;
+	pthread_mutex_unlock(&lock);
+	return (status);
 }

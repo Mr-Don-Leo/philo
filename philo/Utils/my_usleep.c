@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   my_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 12:16:55 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:09:04 by mbabayan         ###   ########.fr       */
+/*   Created: 2024/07/23 16:04:44 by mbabayan          #+#    #+#             */
+/*   Updated: 2024/07/23 16:51:19 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-int	ft_atoi(char *string)
+int	my_usleep(size_t milliseconds, t_philo *philo)
 {
-	unsigned long long	total;
+	size_t	start_time;
+	size_t	end_time;
 
-	total = 0;
-	if (*string == '-' || *string == '+')
+	start_time = get_time();
+	end_time = start_time + milliseconds;
+	while (get_time() < end_time)
 	{
-		if (*string == '-')
-			return (-1);
-		string++;
+		if (!death(philo))
+			return (0);
+		usleep(100);
 	}
-	while (*string && (*string) >= '0' && (*string) <= '9')
-	{
-		total = (total * 10) + (*string - '0');
-		if (total > INT_MAX)
-			return (-1);
-		string++;
-	}
-	if (*string)
-		return (-1);
-	return (total);
+	return (1);
 }
