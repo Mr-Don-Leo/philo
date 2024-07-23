@@ -48,17 +48,6 @@ when calling `#include <pthread.h>`, pthread stands for POSIX Threads.
 
 ------------------------------------------------------------------------------------------------------
 
-pthread_create();
-
-It creates a new thread, by passing arguments: pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg
-
-pthread_join(); 
-
-Pauses the execution until the target thread is complete.
-arguments: pthread_t thread, void **value_ptr
-
-
-
 NESO ACADEMY: 
 https://www.youtube.com/watch?v=LOfGJcVnvAk
 -----------
