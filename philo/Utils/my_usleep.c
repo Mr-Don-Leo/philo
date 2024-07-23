@@ -6,12 +6,16 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:04:44 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/23 16:51:19 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:35:09 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
+/// @brief Sleep for a given amount of time, checking for death
+/// @param milliseconds 
+/// @param philo 
+/// @return int
 int	my_usleep(size_t milliseconds, t_philo *philo)
 {
 	size_t	start_time;

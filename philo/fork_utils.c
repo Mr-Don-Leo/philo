@@ -6,7 +6,7 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:44:57 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:04:46 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:38:28 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,10 @@ int	left_fork(t_philo *philo)
 	return (1);
 }
 
+/// @brief The take_forks function is called when the philosopher is trying to
+///		take both forks.
+/// @param philo 
+/// @return int
 int	take_forks(t_philo *philo)
 {
 	if (!philo->right_fork && right_fork(philo))

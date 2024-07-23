@@ -6,12 +6,15 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 02:21:21 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:03:29 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:40:40 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+/// @brief Create threads
+/// @param philo 
+/// @param env 
 void	thread_create(t_philo **philo, t_env *env)
 {
 	int	index;
@@ -24,6 +27,9 @@ void	thread_create(t_philo **philo, t_env *env)
 	}
 }
 
+/// @brief Join threads
+/// @param philo 
+/// @param env 
 void	thread_join(t_philo **philo, t_env *env)
 {
 	int	index;
@@ -36,6 +42,8 @@ void	thread_join(t_philo **philo, t_env *env)
 	}
 }
 
+/// @brief Destroy mutexes
+/// @param env 
 void	destroy_mutex(t_env *env)
 {
 	int	i;

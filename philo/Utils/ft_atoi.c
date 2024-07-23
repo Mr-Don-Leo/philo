@@ -6,12 +6,15 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:16:55 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:09:04 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:34:28 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
+/// @brief Ascii to integer conversion
+/// @param string 
+/// @return int
 int	ft_atoi(char *string)
 {
 	unsigned long long	total;

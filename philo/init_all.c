@@ -6,12 +6,14 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:55:35 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:07:39 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:39:55 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+/// @brief Initialize forks
+/// @param env 
 void	init_forks(t_env *env)
 {
 	int	index;
@@ -24,6 +26,8 @@ void	init_forks(t_env *env)
 	}
 }
 
+/// @brief Initialize mutexes
+/// @param env 
 void	init_mutexs(t_env *env)
 {
 	int	index;
@@ -40,6 +44,10 @@ void	init_mutexs(t_env *env)
 	}
 }
 
+/// @brief Initialize environment
+/// @param argc 
+/// @param argv 
+/// @param env 
 void	init_env(int argc, char **argv, t_env *env)
 {
 	env->no_philos = ft_atoi(argv[1]);
@@ -64,6 +72,9 @@ void	init_env(int argc, char **argv, t_env *env)
 	env->start = get_time();
 }
 
+/// @brief Initialize philosophers
+/// @param philo 
+/// @param env 
 void	init_philos(t_philo **philo, t_env *env)
 {
 	int	index;

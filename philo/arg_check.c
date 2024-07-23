@@ -6,18 +6,24 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 11:10:45 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/21 02:11:20 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/24 01:37:11 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+/// @brief Exit the program with an error message
+/// @param str 
 void	error_exit(char *str)
 {
 	printf("%s\n", str);
 	exit(0);
 }
 
+/// @brief Check if the arguments are valid
+/// @param argc 
+/// @param argv 
+/// @return int
 int	arg_check(int argc, char **argv)
 {
 	int	index;
