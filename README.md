@@ -47,6 +47,10 @@ make
 ```bash
 ./philo 5 800 200 200 7
 ```
+- You can verify it was 7 meals by checking the last line of the output. Or you can run the following command:
+```bash
+./philo 5 800 200 200 7 | grep "is eating" | wc -l
+```	
 
 ## Output
 The output of the code will be as follows:
