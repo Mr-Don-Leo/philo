@@ -6,7 +6,7 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:30:44 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:06:18 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/26 14:17:31 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ typedef struct s_philo
 /*
 ** parsing
 */
-
 int		arg_check(int argc, char **argv);
 int		ft_atoi(char *string);
 void	error_exit(char *str);
@@ -76,5 +75,6 @@ int		take_forks(t_philo *philo);
 void	thread_join(t_philo **philo, t_env *env);
 int		my_usleep(size_t milliseconds, t_philo *philo);
 int		death(t_philo *philo);
+void	free_philos(t_philo **philo, t_env *env);
 
 #endif

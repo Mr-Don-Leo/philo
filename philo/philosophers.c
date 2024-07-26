@@ -6,7 +6,7 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:32:11 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/24 01:40:10 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/26 14:18:22 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_philo	**philo;
 	t_env	env;
-	int		index;
-	int		index2;
 
 	if (arg_check(argc, argv))
 	{
@@ -28,13 +26,9 @@ int	main(int argc, char **argv)
 		init_philos(philo, &env);
 		thread_create(philo, &env);
 		thread_join(philo, &env);
-		index = 0;
-		index2 = 0;
 		free(env.forks);
 		free(env.forks_mutex);
-		while (++index < index2)
-			free(philo[index]);
-		free(philo);
+		free_philos(philo, &env);
 	}
 	return (-1);
 }
