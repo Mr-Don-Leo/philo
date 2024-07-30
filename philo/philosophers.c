@@ -6,12 +6,12 @@
 /*   By: mbabayan <mbabayan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 02:32:11 by mbabayan          #+#    #+#             */
-/*   Updated: 2024/07/26 14:18:22 by mbabayan         ###   ########.fr       */
+/*   Updated: 2024/07/30 14:38:41 by mbabayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
- 
+
 int	main(int argc, char **argv)
 {
 	t_philo	**philo;

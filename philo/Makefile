@@ -6,7 +6,7 @@ SRCS = philosophers.c arg_check.c init_all.c thread_helpers.c process.c fork_uti
 
 CC = @cc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address,undefined -g3
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=thread #-fsanitize=address,undefined -g3 
 
 OBJS = $(SRCS:.c=.o)
 
